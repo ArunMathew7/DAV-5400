@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 
 #Reading the values and storing it in a dataframe using pandas
-death_df = pd.read_csv(r"C:\Users\Arun Mathew\Documents\Python Scripts\project 1\Monthly_Counts_of_Deaths_by_Select_Causes__2014-2019.csv",encoding='unicode_escape')        
+death_df = pd.read_csv("https://raw.githubusercontent.com/ArunMathew7/DAV-5400/main/Project1/Monthly_Counts_of_Deaths_by_Select_Causes__2014-2019.csv",encoding='unicode_escape')        
 
 class data:
     """
