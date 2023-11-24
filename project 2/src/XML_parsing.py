@@ -16,6 +16,12 @@ class sitemapParser:
     def fetch_robots_txt(self):
         """
         This function fetches the robots.txt file
+
+        Args:
+        self - contains the url of the website
+
+        Return:
+        response.text - returns the response of the url
         """
         try:
             robots_url = f"{website_url}/robots.txt"
@@ -31,6 +37,12 @@ class sitemapParser:
     def parse_robots_txt(self, robots_txt):
         """
         Function fetches the sitemap from the robots.txt file
+
+        Args:
+        robots_txt - which is the robots.txt of the website
+
+        Return:
+        none
         """
         if not robots_txt:
             return
@@ -47,6 +59,12 @@ class sitemapParser:
     def parse_sitemaps_to_dataframe(self):
         """
         Extracting data from sitemaps to a dataframe
+
+        Args:
+        self - contains all the sitemaps from robots.txt
+
+        Return:
+        df - dataframe containing data's of sitemap
         """
         if not self.sitemaps:
             print("No sitemaps found in robots.txt")

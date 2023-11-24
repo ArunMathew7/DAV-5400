@@ -14,6 +14,12 @@ class goodreadsquoteScraper:
     def get_page_content(self, url):
         """
         Fetching content of website using requests.get()
+
+        Args:
+        url - url of webpage
+
+        Returns:
+        text - response.text has the response of url
         """
         try:
             response = requests.get(url)
@@ -31,6 +37,12 @@ class goodreadsquoteScraper:
     def scrape_quotes(self, num_pages=1):
         """
         parsing the contents of website using beautifulsoup and appending it into a quotes lists
+
+        Args:
+        num_pages - number of pages scraped
+
+        Returns:
+        quotes - quotes scraped from website which is a list
         """
         quotes = []
 
@@ -59,6 +71,12 @@ class goodreadsquoteScraper:
     def create_dataframe(self, quotes):
         """
         converts the quotes lists into a dataframe and returns it
+
+        Args:
+        quotes - scraped quotes from website
+
+        Return:
+        df - data in quotes list is converted into this dataframe
         """
         goodreads_scraper = goodreadsquoteScraper()
         quotes = goodreads_scraper.scrape_quotes(num_pages=100)

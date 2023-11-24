@@ -17,6 +17,12 @@ class carManufacturers:
         """
         Function gets the response after hitting the url if the response is OK then data is stored else
         it will create an exception and print the error.
+
+        Args:
+        self - contains the url of API
+
+        Returns:
+        data["Results"] - data extracted from the API
         """
         endpoint = "getallmanufacturers"
         url = f"{self.base_url}{endpoint}?format=json"
@@ -40,6 +46,12 @@ class carManufacturers:
     def create_dataframe(self, manufacturers_data):
         """
         Converts the data into a dataframe.
+
+        Args:
+        manufacturers_data - contains the extracted data
+
+        Returns:
+        pd.DataFrame(manufacturers_data) - returns the extracted data as a dataframe
         """
         if manufacturers_data is not None:
             return pd.DataFrame(manufacturers_data)
