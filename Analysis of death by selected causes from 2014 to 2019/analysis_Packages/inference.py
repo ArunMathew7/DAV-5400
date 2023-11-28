@@ -9,7 +9,7 @@ warnings.filterwarnings("ignore")
 
 # Reading the values and storing it in a dataframe using pandas
 death_df = pd.read_csv(
-    r"C:\Users\Arun Mathew\Documents\Python Scripts\project 1\Monthly_Counts_of_Deaths_by_Select_Causes__2014-2019.csv",
+    "https://raw.githubusercontent.com/ArunMathew7/DAV-5400/main/Analysis%20of%20death%20by%20selected%20causes%20from%202014%20to%202019/Monthly_Counts_of_Deaths_by_Select_Causes__2014-2019.csv",
     encoding="unicode_escape",
 )
 

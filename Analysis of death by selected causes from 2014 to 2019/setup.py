@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(
-    name="src",
+    name="analysis_Packages",
     version=0.1,
     description="Analysis of death by selected causes from 2014 to 2019",
     author="Arun Mathew",
