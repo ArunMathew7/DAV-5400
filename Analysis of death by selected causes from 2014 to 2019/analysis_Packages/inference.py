@@ -14,7 +14,7 @@ death_df = pd.read_csv(
 )
 
 
-class inference_analysis:
+class inferenceAnalysis:
     """
     This class contains the functions to analyse the plots regarding research questions
     and get the conclusions of all the research questions.

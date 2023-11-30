@@ -14,7 +14,7 @@ death_df = pd.read_csv(
 )
 
 
-class EDA_analysis:
+class edaAnalysis:
     """
     This class contains all the functions which does exploratory data analysis comparing different attributes.
     Visualises it using different graph using Matplotlib and seaborn libraries coming with conclusions based on the graphs.
