@@ -69,7 +69,7 @@ else:
     print("Failed to retrieve manufacturers data from the NHTSA API.")
 
 
-class EDA:
+class eda:
     """
     Class is used for exploratory data analysis for the data from API
     """
@@ -122,28 +122,36 @@ class EDA:
         return data_types
 
     def vehicle_types():
-        # Plotting a pie chart for the distribution of vehicle types
+        """
+        Plotting a bar chart for the distribution of vehicle types.
+        """
         vehicle_types = df["VehicleTypes"].apply(
             lambda x: [item["Name"] for item in x] if x else []
         )
         flat_vehicle_types = [item for sublist in vehicle_types for item in sublist]
-        plt.figure(figsize=(10, 6))
-        plt.pie(
-            pd.Series(flat_vehicle_types).value_counts(),
-            labels=pd.Series(flat_vehicle_types).value_counts().index,
-            autopct="%1.1f%%",
+        plt.figure(figsize=(12, 8))
+        sns.countplot(
+            y=flat_vehicle_types,
+            order=pd.Series(flat_vehicle_types).value_counts().index,
         )
         plt.title("Distribution of Vehicle Types")
+        plt.xlabel("Count")
+        plt.ylabel("Vehicle Types")
         plt.show()
 
     def mfrID():
+        """
+        Distribution of Mfr_ID using a histogram.
+        """
         # Distribution of Mfr_ID using histogram
         plt.figure(figsize=(12, 6))
         sns.histplot(df["Mfr_ID"], bins=20, kde=True)
         plt.show()
 
     def manufacturers_by_country():
-        # Bar plot representing count of manufacturers by country
+        """
+        Bar plot representing the count of manufacturers by country.
+        """
         plt.figure(figsize=(12, 6))
         sns.countplot(data=df, x="Country")
         plt.title("Count of Manufacturers by Country")
@@ -151,7 +159,9 @@ class EDA:
         plt.show()
 
     def manufacturers_by_commonName():
-        # Representation of count of manufacturers by common name by countplot
+        """
+        Representation of the count of manufacturers by common name by countplot.
+        """
         plt.figure(figsize=(12, 6))
         sns.countplot(data=df, x="Mfr_CommonName")
         plt.title("Count of Manufacturers by Common Name")
